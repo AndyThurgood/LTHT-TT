@@ -1,0 +1,37 @@
+﻿<section>
+    <h2 data-bind="text: displayName"></h2>
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Pallindrome</th>
+                        <th>Authorised</th>
+                        <th>Enabled</th>
+                        <th>Colours</th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: people()">
+                    <tr>
+                        <td>
+                            <a href="#" data-bind="text: fullName, click: $parent.select"></a>
+                        </td>
+                        <td>
+                            <span data-bind="text: isPallindrome, boolToLabel: isPallindrome" class="label"></span>
+                        </td>
+                        <td>
+                            <span data-bind="text: isAuthorised, boolToLabel: isAuthorised" class="label"></span>
+                        </td>
+                        <td>
+                            <span data-bind="text: isEnabled, boolToLabel: isEnabled" class="label"></span>
+                        </td>
+                        <td data-bind="foreach: colours">
+                            <span data-bind="text: name"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
